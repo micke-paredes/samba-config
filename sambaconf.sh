@@ -35,4 +35,3 @@ firewall-cmd --info-service samba
 firewall-cmd --permanent --add-service=samba
 
 firewall-cmd --reload
-firewall-cmd --list-services

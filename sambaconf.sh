@@ -1,7 +1,7 @@
-mkdir -p /srv/samba/share_dir
-chmod -R 755 /srv/samba/share_dir
-chown -R  nobody:nobody /srv/samba/share_dir
-chcon -t samba_share_t /srv/samba/share_dir
+mkdir -p /srv/samba
+chmod -R 755 /srv/samba
+chown -R  nobody:nobody /srv/samba
+chcon -t samba_share_t /srv/samba
 mv /etc/samba/smb.conf /etc/samba/smb.conf.bak
 cat > /etc/samba/smb.conf << "EOL"
 [global]
@@ -14,7 +14,7 @@ dns proxy = no
 ntlm auth = true
 
 [Public]
-path =  /srv/samba/share_dir
+path =  /srv/samba
 browsable =yes
 writable = yes
 guest ok = yes
